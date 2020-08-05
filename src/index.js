@@ -1,14 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Badge from "./components/Badges";
+import "bootstrap/dist/css/bootstrap.css";
+import "./global.css";
 
-const element = (
-  <div>
-    <h1>Hola, soy Gabriel</h1>
-    <p>Soy Ingeniero FrontEnd</p>
-  </div>
-);
+import Badge from "./components/Badges";
 
 const container = document.getElementById("app");
 
