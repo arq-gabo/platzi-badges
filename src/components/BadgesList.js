@@ -1,21 +1,24 @@
 import React from "react";
+
 import "./styles/BadgesList.css";
 
-class BadgeListItem extends React.Component {
+class BadgesListItem extends React.Component {
   render() {
     return (
-      <div className="card">
+      <div className="BadgesListItem">
         <img
-          className="card-img-top"
+          className="BadgesListItem__avatar"
           src={this.props.badge.avatarUrl}
           alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
         />
-        <div class="card-body">
-          <h5 class="card-title">
+
+        <div>
+          <strong>
             {this.props.badge.firstName} {this.props.badge.lastName}
-          </h5>
-          <p class="card-text">@{this.props.badge.twitter}</p>
-          <p class="card-text">{this.props.badge.jobTitle}</p>
+          </strong>
+          <br />@{this.props.badge.twitter}
+          <br />
+          {this.props.badge.jobTitle}
         </div>
       </div>
     );
@@ -25,12 +28,12 @@ class BadgeListItem extends React.Component {
 class BadgesList extends React.Component {
   render() {
     return (
-      <div class="container">
-        <ul>
+      <div className="BadgesList">
+        <ul className="list-unstyled">
           {this.props.badges.map((badge) => {
             return (
               <li key={badge.id}>
-                <BadgeListItem badge={badge} />
+                <BadgesListItem badge={badge} />
               </li>
             );
           })}
